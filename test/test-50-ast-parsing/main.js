@@ -39,5 +39,5 @@ right = utils.spawn.sync('./' + path.basename(output), [], {
   cwd: path.dirname(output),
 });
 
-assert.strictEqual(left, right);
+assert.strictEqual(left.replace(/\r\n/, '\n'), right.replace(/\r\n/, '\n'));
 utils.vacuum.sync(output);
